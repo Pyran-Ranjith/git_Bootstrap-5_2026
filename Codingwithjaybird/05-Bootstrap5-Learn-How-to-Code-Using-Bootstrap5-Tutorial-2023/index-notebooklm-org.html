@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 Starter Template එකෙන් ලබාගත් CSS link එක [2] -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Build a web page using bootstrap 5</title>
+  </head>
+  <body>
+
+    <!-- Navigation Bar [3] -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <!-- Logo එක සහ උස 80 ලෙස සකස් කිරීම [3] -->
+        <a class="navbar-brand" href="#">
+          <img src="IMG/logo.jpg" alt="Tour Canada Logo" height="80">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <!-- IDs මගින් single-page scrolling සක්‍රීය කිරීම [3], [4] -->
+            <li class="nav-item">
+              <a class="nav-link" href="#destinations">Destinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel Section (ස්ලයිඩ 4ක් සහිතව) [4], [5] -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="IMG/lighthouse.jpg" class="d-block w-100" alt="Lighthouse">
+        </div>
+        <div class="carousel-item">
+          <img src="IMG/geese.jpg" class="d-block w-100" alt="Geese">
+        </div>
+        <div class="carousel-item">
+          <img src="IMG/mountains.jpg" class="d-block w-100" alt="Mountains">
+        </div>
+        <div class="carousel-item">
+          <img src="IMG/falls.jpg" class="d-block w-100" alt="Falls">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Main Container ආරම්භය [5] -->
+    <div class="container">
+      
+      <!-- ප්‍රධාන ශීර්ෂය සහ පෙළ [5], [6] -->
+      <h1 class="text-center p-5 mb-5 mt-5">Tour Canada Today</h1>
+      
+      <div class="w-100 bg-dark-subtle p-3 mb-5 mt-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. (Lorem 100 placeholders here...)</p>
+        <!-- Bootstrap Button [7] -->
+        <button type="button" class="btn btn-primary btn-lg">Book your trip now</button>
+      </div>
+
+      <!-- Destinations Section (Grid System භාවිතා කර) [7], [8] -->
+      <h2 id="destinations" class="fs-1 text-center p-5 mb-5 mt-5">Popular Destinations</h2>
+      
+      <div class="row">
+        <!-- Card 1 - Banff (Responsive බව සඳහා fixed width ඉවත් කර ඇත) [8], [9] -->
+        <div class="col">
+          <div class="card">
+            <img src="IMG/mountains.jpg" class="card-img-top" alt="Mountains">
+            <div class="card-body">
+              <h5 class="card-title">Banff</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet... (Lorem 30)</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 - Peggy's Cove [9] -->
+        <div class="col">
+          <div class="card">
+            <img src="IMG/lighthouse.jpg" class="card-img-top" alt="Lighthouse">
+            <div class="card-body">
+              <h5 class="card-title">Peggy's Cove</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet... (Lorem 30)</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 - Yukon [9] -->
+        <div class="col">
+          <div class="card">
+            <img src="IMG/yukon.jpg" class="card-img-top" alt="Yukon">
+            <div class="card-body">
+              <h5 class="card-title">Yukon</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet... (Lorem 30)</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Us Section (col-6 භාවිතා කර Grid 4ක්) [10], [11] -->
+      <h2 id="about" class="fs-1 text-center p-5 mb-5 mt-5">About</h2>
+      
+      <div class="row text-center">
+        <!-- Block 1: Rates [10] -->
+        <div class="col-6">
+          <div class="bg-secondary text-white p-5 m-2">
+            <h2>Rates</h2>
+            <p>Lorem ipsum dolor sit amet... (Lorem 50)</p>
+          </div>
+        </div>
+        <!-- Block 2: Fees [11] -->
+        <div class="col-6">
+          <div class="bg-dark-subtle p-5 m-2">
+            <h2>Fees</h2>
+            <p>Lorem ipsum dolor sit amet... (Lorem 50)</p>
+          </div>
+        </div>
+        <!-- Block 3: Popular Sites [11] -->
+        <div class="col-6">
+          <div class="bg-dark-subtle p-5 m-2">
+            <h2>Popular Sites</h2>
+            <p>Lorem ipsum dolor sit amet... (Lorem 50)</p>
+          </div>
+        </div>
+        <!-- Block 4: Features [11] -->
+        <div class="col-6">
+          <div class="bg-secondary text-white p-5 m-2">
+            <h2>Features</h2>
+            <p>Lorem ipsum dolor sit amet... (Lorem 50)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Us Section [12] -->
+      <h2 id="contact" class="fs-1 text-center p-5 mb-5 mt-5">Contact Us</h2>
+      <div class="w-100 bg-dark-subtle p-3 mb-5 mt-5 text-center">
+        <p>
+          <a href="mailto:abc@def.com" class="text-white text-decoration-none">Contact us for more information</a>
+        </p>
+      </div>
+
+      <!-- Transition Image [13] -->
+      <h2 class="fs-1 text-center p-5 mb-5 mt-5">Relax in beautiful Canada</h2>
+      <img src="IMG/vacation.jpg" class="w-100 mb-5" alt="Vacation">
+
+    </div> <!-- Main Container අවසානය [14] -->
+
+    <!-- Footer (Container එකෙන් පිටත, සම්පූර්ණ පළල සඳහා) [15], [14] -->
+    <footer class="bg-dark text-white text-center p-5 mt-5">
+      <p>&copy; Tour Canada Today</p>
+      <a href="mailto:abc@def.com" class="text-white">Email us</a>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript [2] -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

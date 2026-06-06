@@ -1,0 +1,14 @@
+.box {
+    margin: 15px 0;
+}
+
+.row {
+    min-height: 350px;
+    background-color: bisque;
+}
+
+.col, .col-3 {
+    background-color: paleturquoise;
+    padding: 40px 20px;
+    border: 1px solid darkcyan;
+}
