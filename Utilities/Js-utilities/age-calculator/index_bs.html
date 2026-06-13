@@ -1,0 +1,110 @@
+<!-- index_bs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator · Bootstrap 5</title>
+    <!-- Bootstrap 5 only (no extra custom CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional Bootstrap Icons (lightweight, but adds clarity) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- zero custom CSS file – everything uses Bootstrap utilities -->
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <!-- Bootstrap card: clean, no custom CSS -->
+                <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <!-- header -->
+                        <div class="text-center mb-4">
+                            <i class="bi bi-calendar-heart fs-1 text-primary"></i>
+                            <h1 class="h2 fw-bold mt-2 text-dark">Age Calculator</h1>
+                            <p class="text-secondary-emphasis small">Enter your birth date & get exact age</p>
+                        </div>
+
+                        <!-- form group: only Bootstrap classes -->
+                        <div class="mb-4">
+                            <label for="birthday" class="form-label fw-semibold">
+                                <i class="bi bi-gift me-1"></i> Date of birth
+                            </label>
+                            <input type="date" class="form-control form-control-lg rounded-3" id="birthday" name="birthday">
+                            <div class="form-text mt-2">
+                                <i class="bi bi-info-circle"></i> Select your birthday and click calculate
+                            </div>
+                        </div>
+
+                        <!-- button: Bootstrap styling only -->
+                        <div class="d-grid gap-2 mb-4">
+                            <button id="btn" class="btn btn-primary btn-lg rounded-3 py-2 fw-semibold">
+                                <i class="bi bi-calculator-fill me-2"></i> Calculate Age
+                            </button>
+                        </div>
+
+                        <!-- result panel: Bootstrap card + background utility, no custom CSS -->
+                        <div class="card bg-light border-0 rounded-3">
+                            <div class="card-body text-center p-3">
+                                <i class="bi bi-emoji-smile fs-3 text-warning"></i>
+                                <p id="result" class="fs-3 fw-bold mb-0 text-secondary">— years old</p>
+                                <small class="text-muted">based on current date</small>
+                            </div>
+                        </div>
+
+                        <!-- extra badge row (pure Bootstrap) -->
+                        <div class="text-center mt-4">
+                            <span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill px-3 py-2 me-1">
+                                <i class="bi bi-check-circle"></i> Accurate
+                            </span>
+                            <span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill px-3 py-2">
+                                <i class="bi bi-calendar-week"></i> Leap year ready
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 text-center pb-4">
+                        <small class="text-muted"><i class="bi bi-heart"></i> Bootstrap 5 version — minimal custom code</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MINIMAL JAVASCRIPT: only age calculation logic, no extra styles, no external js file -->
+    <script>
+        // Minimum JS: exactly the original logic + event binding (no extra animations or custom classes)
+        const btnEl = document.getElementById("btn");
+        const birthdayEl = document.getElementById("birthday");
+        const resultEl = document.getElementById("result");
+
+        // identical getAge function from original (only core math)
+        function getAge(birthdayValue) {
+            const currentDate = new Date();
+            const birthdayDate = new Date(birthdayValue);
+            let age = currentDate.getFullYear() - birthdayDate.getFullYear();
+            const month = currentDate.getMonth() - birthdayDate.getMonth();
+            if (month < 0 || (month === 0 && currentDate.getDate() < birthdayDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        // calculateAge with same validation, same template literal text
+        function calculateAge() {
+            const birthdayValue = birthdayEl.value;
+            if (birthdayValue === "") {
+                alert("Please enter your birthday");
+            } else {
+                const age = getAge(birthdayValue);
+                resultEl.innerText = `Your age is ${age} ${age > 1 ? "years" : "year"} old`;
+            }
+        }
+
+        btnEl.addEventListener("click", calculateAge);
+    </script>
+    <!-- Bootstrap JS bundle (optional for some interactions, but not needed for functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
